@@ -1,7 +1,7 @@
 import logo from "../assets/img/logo-vinted.svg";
 import { Link } from "react-router-dom";
 
-const Header = (userToken, setUser) => {
+const Header = ({ userToken, setUser }) => {
   return userToken ? (
     <button onClick={() => setUser(null)}>Se déconnecter</button>
   ) : (
