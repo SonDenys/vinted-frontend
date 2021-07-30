@@ -1,1 +1,70 @@
-/* Other rules */
+/* HOME */
+
+/* Header */
+
+#Header {
+  border: solid 2px;
+  width: 1240px;
+  margin: auto;
+}
+
+/* Banner */
+
+#Banner {
+  border: solid red 2px;
+  display: flex;
+  background-image: url("./assets/img/banner-vinted.jpg");
+}
+
+#Banner img {
+  height: 455px;
+  width: 100%;
+  object-fit: cover;
+  /* position: relative; */
+}
+
+.Block-banner {
+  background-color: white;
+  border: solid blue 2px;
+  width: 50%;
+  /* position: absolute; */
+  /* top: 230px; */
+}
+
+/* Home-Offers */
+
+#Home-Card-Offers {
+  width: 1240px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card-container {
+  display: flex;
+  flex-direction: column;
+
+  border: solid 2px;
+  height: 450px;
+  width: 235px;
+}
+
+.Card-container img {
+  width: 235px;
+  height: 362px;
+  object-fit: cover;
+}
+
+.price {
+  font-size: 14px;
+}
+
+.taille .marque {
+  font-size: 12px;
+}
+
+/* SIGNUP */
+
+.red-border {
+  border: solid red 2px;
+}
