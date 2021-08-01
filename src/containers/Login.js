@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -39,9 +39,9 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div>
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit}>
+    <div class="Login-container">
+      <h2>Se connecter</h2>
+      <form onSubmit={handleSubmit} class="Login-form">
         <input
           placeholder="Nom d'utilisateur"
           type="text"
@@ -67,7 +67,12 @@ const Login = ({ setUser }) => {
           }}
         />
         <p>{errorMessage}</p>
-        <input type="submit" value={"Se connecter"} />
+        <button class="Login-button" type="submit">
+          Se connecter
+        </button>
+        <Link to={"/signup"}>
+          <p class="Already">Pas encore de compte ? Inscris-toi !</p>
+        </Link>
       </form>
     </div>
   );

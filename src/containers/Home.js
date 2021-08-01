@@ -28,14 +28,16 @@ const Home = () => {
   ) : (
     <>
       <section id="Banner">
-        <img src={banner} alt="Banner-Image"></img>
-        <div class="Block-banner">
-          <h1>Prêts à faire du tri dans vos placards ?</h1>
-          <button>Vends maintenant</button> <p>Découvrir comment ça marche</p>
+        {/* <img src={banner} alt="Banner-Image"></img> */}
+        <div class="Banner-sub">
+          <div class="Block">
+            <h1>Prêts à faire du tri dans vos placards ?</h1>
+            <button>Vends maintenant</button>
+          </div>
         </div>
       </section>
 
-      <section id="Home-Card-Offers">
+      <main id="Home-Card-Offers">
         {data.offers.map((offer, index) => {
           return (
             <>
@@ -48,15 +50,15 @@ const Home = () => {
                     src={offer.product_image.secure_url}
                     alt={offer.product_name}
                   />
-                  <p class="price">{offer.product_price} €</p>
-                  <p class="taille"> {offer.product_details[1].TAILLE}</p>
-                  <p class="marque"> {offer.product_details[0].MARQUE}</p>
+                  <div class="price">{offer.product_price} €</div>
+                  <div class="size"> {offer.product_details[1].TAILLE}</div>
+                  <div class="brand"> {offer.product_details[0].MARQUE}</div>
                 </div>
               </Link>
             </>
           );
         })}
-      </section>
+      </main>
     </>
   );
 };

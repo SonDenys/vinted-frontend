@@ -30,22 +30,23 @@ const Signup = ({ setUser }) => {
     try {
       const newUser = { username: name, email: email, password: password };
       const response = await axios.post(
-        `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         newUser
       );
       console.log(response.data);
       console.log("Token ===> " + response.data);
+
+      if (response.data.token) {
+        setUser(response.data.token);
+        history.push("/");
+      }
       // Checking if the passwords are correct
-      if (password !== confirmPassword) {
+      else if (password !== confirmPassword) {
         setErrorPassword(true);
         setErrorMessage("Vos mots de passe ne sont pas identiques.");
       } else {
         setValid(true);
         setErrorPassword(false);
-      }
-      if (response.data.token) {
-        setUser(response.data.token);
-        history.push("/");
       }
 
       setData(response.data);
@@ -59,9 +60,9 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div>
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit}>
+    <div class="Signup-container">
+      <h2>S'inscrire</h2>
+      <form onSubmit={handleSubmit} class="Signup-form">
         <input
           placeholder="Nom d'utilisateur"
           type="text"
@@ -78,7 +79,7 @@ const Signup = ({ setUser }) => {
         />
         <input
           className={errorPassword && "red-border"}
-          placeholder="Password"
+          placeholder="Mot de passe"
           type="password"
           name="password"
           value={password}
@@ -88,7 +89,7 @@ const Signup = ({ setUser }) => {
         />
         <input
           className={errorPassword && "red-border"}
-          placeholder="Confirm Password"
+          placeholder="Confirmer votre mot de passe"
           value={confirmPassword}
           type="password"
           name="confirm password"
@@ -96,12 +97,27 @@ const Signup = ({ setUser }) => {
             setConfirmPassword(event.target.value);
           }}
         />
+
+        <div class="Checkbox-container">
+          <input type="checkbox"></input>
+          <span>S'inscrire à notre newsletter</span>
+          <p>
+            En m'inscrivant je confirme avoir lu et accepté les Termes et
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
+        </div>
+
         <p>{errorMessage}</p>
-        <input type="submit" value={"S'inscrire"} />
-        <Link to={`/login`}>
-          <p>Tu as déjà un compte ? Connecte-toi !</p>
-        </Link>
+
+        <button class="Signup-button-inscription" type="submit">
+          S'inscrire
+        </button>
       </form>
+
+      <Link to={`/login`}>
+        <p class="Already">Tu as déjà un compte ? Connecte-toi !</p>
+      </Link>
     </div>
   );
 };

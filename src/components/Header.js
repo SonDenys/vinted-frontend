@@ -6,16 +6,26 @@ const Header = ({ userToken, setUser }) => {
     <button onClick={() => setUser(null)}>Se déconnecter</button>
   ) : (
     <section id="Header">
-      <img src={logo} alt="logo-vinted"></img>
-      <input type="text" placeholder="Rechercher des articles" />
-      <Link to={`/user/signup`}>
-        <button>S'inscrire</button>
-      </Link>
-      <Link to={`/login`}>
-        <button>Se connecter</button>
-      </Link>
-
-      <button>Vends tes articles</button>
+      <div>
+        <Link to={`/`}>
+          <img src={logo} alt="logo-vinted" className="logo"></img>
+        </Link>
+      </div>
+      <div>
+        <input
+          className="search"
+          type="text"
+          placeholder="Rechercher des articles"
+          id="searchBar"
+        />
+        <Link to={`/signup`}>
+          <button class="button-inscription">S'inscrire</button>
+        </Link>
+        <Link to={`/login`}>
+          <button class="button-connexion">Se connecter</button>
+        </Link>
+        <button class="button-vendre">Vends tes articles</button>
+      </div>
     </section>
   );
 };

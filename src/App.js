@@ -7,6 +7,7 @@ import Signup from "./containers/Signup";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import Login from "./containers/Login";
+// import font from "./assets/fonts";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);

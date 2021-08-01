@@ -1,34 +1,122 @@
+/* GLOBAL RULES */
+
+/* @font-face {
+  font-family: "Font";
+  src: url("Font.eot");
+  src: url("Font.eot?#iefix") format("embedded-opentype"),
+    url("Font.woff2") format("woff2"), url("Font.woff") format("woff"),
+    url("Font.ttf") format("truetype"), url("Font.svg#Font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font";
+  src: url("Font_1.eot");
+  src: url("Font_1.eot?#iefix") format("embedded-opentype"),
+    url("Font_1.woff2") format("woff2"), url("Font_1.woff") format("woff"),
+    url("Font_1.ttf") format("truetype"), url("Font_1.svg#Font") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+} */
+
 /* HOME */
+
+* {
+  box-sizing: border-box;
+}
 
 /* Header */
 
 #Header {
-  border: solid 2px;
   width: 1240px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Header button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-inscription {
+  background: white;
+  color: #09b1ba;
+  border: #09b1ba solid 1px;
+}
+
+.button-connexion {
+  background: white;
+  color: #09b1ba;
+  border: #09b1ba solid 1px;
+}
+
+.button-vendre {
+  background-color: #09b1ba;
+  color: white;
+  border: none;
+}
+
+#Header input {
+  padding: 10px 300px 10px 10px;
+  border: none;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  border-color: none;
+  margin-right: 50px;
+  text-decoration-color: grey;
+  font-style: bold;
+}
+
+.logo {
+  padding-top: 5px;
+  height: 70px;
 }
 
 /* Banner */
 
 #Banner {
-  border: solid red 2px;
   display: flex;
   background-image: url("./assets/img/banner-vinted.jpg");
+  background-size: cover;
+  background-position: 50%;
+  margin-top: 30px;
 }
 
-#Banner img {
-  height: 455px;
-  width: 100%;
-  object-fit: cover;
-  /* position: relative; */
+.Banner-sub {
+  height: 400px;
+  width: 1080px;
+  align-items: center;
+  margin: 10px auto 35px;
 }
 
-.Block-banner {
+.Block {
   background-color: white;
-  border: solid blue 2px;
   width: 50%;
-  /* position: absolute; */
-  /* top: 230px; */
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 80px;
+}
+
+.Block button {
+  background-color: #09b1ba;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  width: 160px;
+  border: none;
 }
 
 /* Home-Offers */
@@ -38,15 +126,29 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .Card-container {
   display: flex;
   flex-direction: column;
-
-  border: solid 2px;
+  justify-content: space-around;
   height: 450px;
   width: 235px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.Card-container:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.Card-username {
+  font-size: 12px;
 }
 
 .Card-container img {
@@ -55,16 +157,251 @@
   object-fit: cover;
 }
 
-.price {
-  font-size: 14px;
+.Card-container img:hover {
+  box-shadow: 0 2px 2px 2px #9cb3b4;
 }
 
-.taille .marque {
+.price {
+  font-size: 14px;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.size {
   font-size: 12px;
+}
+
+.brand {
+  font-size: 12px;
+  color: grey;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: inherit;
 }
 
 /* SIGNUP */
 
 .red-border {
   border: solid red 2px;
+}
+
+/* OFFER-PAGE */
+
+.Offer-body {
+  background-color: #ebedee;
+  margin-top: 30px;
+}
+
+.Offer-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Offer-pictures {
+  padding: 30px 0;
+  display: block;
+}
+
+.Offer-pictures img {
+  width: 450px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.Offer-infos {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 30px;
+  height: 600px;
+  margin-top: 30px;
+}
+
+.Offer-price {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.Offer-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.Infos-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 14px;
+}
+
+.Offer-infos .divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ebedee;
+  margin-top: 80px;
+}
+
+.Offer-content {
+  margin-top: 70px;
+}
+
+.Offer-name {
+  font-weight: bold;
+}
+
+.Offer-avatar-username {
+  font-weight: bold;
+}
+
+.Offer-infos button {
+  background-color: #09b1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+/* SIGNUP PAGE */
+
+h2 {
+  margin: auto;
+}
+
+.Signup-container,
+.Signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Signup-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.Signup-form {
+  width: 270px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.Signup-form > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+button,
+input {
+  outline: none;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  cursor: text;
+  margin: 0em;
+  font: 400 13px Arial;
+}
+
+.Checkbox-container input {
+  margin-right: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.Checkbox-container span {
+  font-size: 16px;
+}
+
+.Checkbox-container p {
+  font-size: 12px;
+  color: #9cb3b4;
+  text-align: left;
+}
+
+.Signup-button-inscription {
+  background-color: #09b1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Already {
+  font-size: 12px;
+  color: #09b1ba;
+}
+
+/* LOGIN PAGE */
+
+.Login-container,
+.Login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.Login-form {
+  width: 270px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.Login-form > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.Login-button {
+  background-color: #09b1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  font-size: 16px;
+  width: 100%;
 }
