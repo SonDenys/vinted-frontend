@@ -7,10 +7,13 @@ import Signup from "./containers/Signup";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import Login from "./containers/Login";
+import Publish from "./containers/Publish";
+
 // import font from "./assets/fonts";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [searchBar, setSearchBar] = useState("");
 
   const setUser = (token) => {
     if (token) {
@@ -36,10 +39,13 @@ function App() {
           <Offer />
         </Route>
         <Route path="/login">
-          <Login setUser={setUser} />
+          <Login userToken={userToken} setUser={setUser} />
         </Route>
         <Route path="/signup">
           <Signup setUser={setUser} />
+        </Route>
+        <Route path="/publish">
+          <Publish userToken={userToken} setUser={setUser}></Publish>
         </Route>
       </Switch>
     </Router>

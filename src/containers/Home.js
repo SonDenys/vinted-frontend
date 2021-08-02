@@ -32,7 +32,9 @@ const Home = () => {
         <div class="Banner-sub">
           <div class="Block">
             <h1>Prêts à faire du tri dans vos placards ?</h1>
-            <button>Vends maintenant</button>
+            <Link to={`/publish`}>
+              <button>Vends maintenant</button>
+            </Link>
           </div>
         </div>
       </section>

@@ -363,6 +363,7 @@ input {
   font-size: 16px;
   width: 100%;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .Already {
@@ -404,4 +405,13 @@ input {
   height: 35px;
   font-size: 16px;
   width: 100%;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1180px) {
+  header {
+    background: pink;
+  }
 }
