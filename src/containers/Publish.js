@@ -33,7 +33,7 @@ const Publish = ({ userToken, setUser }) => {
       formData.append("picture", picture);
 
       const response = await axios.post(
-        `https://lereacteur-vinted-api.herokuapp.com/publish`,
+        `https://lereacteur-vinted-api.herokuapp.com/offer/publish`,
         formData,
         { headers: { authorization: `Bearer ${userToken}` } }
       );
@@ -60,6 +60,7 @@ const Publish = ({ userToken, setUser }) => {
         <form onSubmit={handleSubmit}>
           <div class="File-select">
             <input
+              placeholder="Ajoute une photo"
               type="file"
               onChange={(event) => {
                 console.log(event.target.files[0]);

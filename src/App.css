@@ -63,6 +63,12 @@
   border: none;
 }
 
+.button-disconnected {
+  background-color: #c2175b;
+  color: white;
+  border: none;
+}
+
 #Header input {
   padding: 10px 300px 10px 10px;
   border: none;
@@ -326,7 +332,6 @@ input {
 }
 
 input {
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   letter-spacing: normal;
   word-spacing: normal;
@@ -406,6 +411,123 @@ input {
   font-size: 16px;
   width: 100%;
   cursor: pointer;
+}
+
+/* PUBLISH PAGE */
+
+#Publish-main {
+  background-color: #ebedee;
+  margin-top: 20px;
+}
+
+.Publish-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.Publish-container h2 {
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.File-select {
+  background-color: #fff;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.File-select input {
+  border: 1px solid #0ab1ba;
+  border-radius: 4px;
+  height: 45px;
+}
+
+.Text-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.Text-input-section {
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0 0 2px grey;
+}
+
+.Text-input > h4 {
+  font-weight: 400;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+.Text-input > textarea {
+  width: 50%;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  outline: none;
+  color: #000;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
+.Text-input > input {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
+.Checkbox-section {
+  width: 50%;
+}
+
+.Checkbox-section > input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: #000;
+  font-family: "Maison Neue";
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.Checkbox-input input {
+  border-radius: 3px;
+  margin: 0 15px 0 0;
+  border: 1px solid #000;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+button,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+div {
+  display: block;
+}
+
+.Publish-button {
+  background-color: #0ab1ba;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 40px 0 40px 1200px;
+  height: 40px;
+  width: 80px;
 }
 
 /* MEDIA QUERIES */

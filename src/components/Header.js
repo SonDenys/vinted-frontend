@@ -17,7 +17,9 @@ const Header = ({ userToken, setUser }) => {
           id="searchBar"
           // onChange={setSearchBar(event.target.value)}
         />
-        <button onClick={() => setUser(null)}>Se déconnecter</button>
+        <button class="button-disconnected" onClick={() => setUser(null)}>
+          Se déconnecter
+        </button>
         <Link to={`/publish`}>
           <button class="button-vendre">Vends tes articles</button>
         </Link>

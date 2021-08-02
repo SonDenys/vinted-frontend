@@ -13,7 +13,6 @@ import Publish from "./containers/Publish";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
-  const [searchBar, setSearchBar] = useState("");
 
   const setUser = (token) => {
     if (token) {
