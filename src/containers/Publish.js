@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import Login from "./Login";
+import { Redirect } from "react-router-dom";
 
-const Publish = ({ userToken, setUser }) => {
+const Publish = ({ userToken }) => {
   const [data, setData] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -40,12 +40,10 @@ const Publish = ({ userToken, setUser }) => {
       console.log(response.data);
       console.log("Token ===> " + response.data);
 
-      if (response.data.token) {
-        setUser(response.data.token);
-        history.push("/");
+      if (response.data._id) {
+        // setUser(response.data.token);
+        history.push(`/offer/${response.data._id}`);
       }
-
-      setData(response.data);
     } catch (error) {
       console.log(error.response);
       console.log(error.message);
@@ -209,7 +207,7 @@ const Publish = ({ userToken, setUser }) => {
     </section>
   ) : (
     // <p>Vous devez être connecté</p>
-    <Login />
+    <Redirect to="/login" />
   );
 };
 

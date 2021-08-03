@@ -1,5 +1,5 @@
-import { useHistory, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useHistory, Link, Redirect } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 
 const Login = ({ setUser }) => {
@@ -25,7 +25,7 @@ const Login = ({ setUser }) => {
       event.preventDefault();
 
       const response = await axios.post(
-        `https://lereacteur-vinted-api.herokuapp.com/login`,
+        `https://lereacteur-vinted-api.herokuapp.com/user/login`,
         { email: email, password: password }
       );
 
@@ -67,9 +67,11 @@ const Login = ({ setUser }) => {
           }}
         />
         <p>{errorMessage}</p>
-        <button class="Login-button" type="submit">
-          Se connecter
-        </button>
+        <Link to={"/"}>
+          <button class="Login-button" type="submit">
+            Se connecter
+          </button>
+        </Link>
         <Link to={"/signup"}>
           <p class="Already">Pas encore de compte ? Inscris-toi !</p>
         </Link>

@@ -17,10 +17,11 @@ function App() {
   const setUser = (token) => {
     if (token) {
       Cookies.set("userToken", token, {
-        expires: 7,
+        expires: 3,
         sameSite: "none",
         secure: true,
       });
+      setUserToken(token);
     } else {
       Cookies.remove("userToken");
       setUserToken(null);
