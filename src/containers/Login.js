@@ -67,11 +67,9 @@ const Login = ({ setUser }) => {
           }}
         />
         <p>{errorMessage}</p>
-        <Link to={"/"}>
-          <button class="Login-button" type="submit">
-            Se connecter
-          </button>
-        </Link>
+        <button class="Login-button" type="submit">
+          Se connecter
+        </button>
         <Link to={"/signup"}>
           <p class="Already">Pas encore de compte ? Inscris-toi !</p>
         </Link>

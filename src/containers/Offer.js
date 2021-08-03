@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Offer = () => {
+const Offer = (userToken) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,7 +65,10 @@ const Offer = () => {
               <p class="Offer-description">{data.product_description}</p>
               <p class="Offer-avatar-username">{data.owner.account.username}</p>
             </div>
-            <button>Acheter</button>
+
+            <button onClick={() => history.push("/payment")}>
+              Achetez maintenant
+            </button>
           </div>
         </div>
       </div>

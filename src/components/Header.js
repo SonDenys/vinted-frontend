@@ -1,7 +1,10 @@
 import logo from "../assets/img/logo-vinted.svg";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Header = ({ userToken, setUser }) => {
+  const history = useHistory();
+
   return userToken ? (
     <section id="Header">
       <div>
@@ -17,9 +20,12 @@ const Header = ({ userToken, setUser }) => {
           id="searchBar"
           // onChange={setSearchBar(event.target.value)}
         />
-        <button class="button-disconnected" onClick={() => setUser(null)}>
-          Se déconnecter
-        </button>
+        <Link to={`/`}>
+          <button class="button-disconnected" onClick={() => setUser(null)}>
+            Se déconnecter
+          </button>
+        </Link>
+
         <Link to={`/publish`}>
           <button class="button-vendre">Vends tes articles</button>
         </Link>
