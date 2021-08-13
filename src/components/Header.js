@@ -2,7 +2,7 @@ import logo from "../assets/img/logo-vinted.svg";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Header = ({ userToken, setUser }) => {
+const Header = ({ userToken, setUser, setSearch }) => {
   const history = useHistory();
 
   return userToken ? (
@@ -18,8 +18,9 @@ const Header = ({ userToken, setUser }) => {
           type="text"
           placeholder="Rechercher des articles"
           id="searchBar"
-          // onChange={setSearchBar(event.target.value)}
+          onChange={(event) => setSearch(event.target.value)}
         />
+
         <Link to={`/`}>
           <button class="button-disconnected" onClick={() => setUser(null)}>
             Se déconnecter
@@ -44,7 +45,7 @@ const Header = ({ userToken, setUser }) => {
           type="text"
           placeholder="Rechercher des articles"
           id="searchBar"
-          // onChange={setSearchBar(event.target.value)}
+          onChange={(event) => setSearch(event.target.value)}
         />
         <Link to={`/signup`}>
           <button class="button-inscription">S'inscrire</button>

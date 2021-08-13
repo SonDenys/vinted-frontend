@@ -4,7 +4,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Offer = (userToken) => {
+const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -65,10 +65,9 @@ const Offer = (userToken) => {
               <p class="Offer-description">{data.product_description}</p>
               <p class="Offer-avatar-username">{data.owner.account.username}</p>
             </div>
-
-            <button onClick={() => history.push("/payment")}>
-              Achetez maintenant
-            </button>
+            <Link to={{ pathname: "/payment", state: { data: data } }}>
+              <button classname="Offer-infos button">Achetez maintenant</button>
+            </Link>
           </div>
         </div>
       </div>
