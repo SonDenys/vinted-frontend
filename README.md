@@ -1,13 +1,13 @@
 ### Frontend Part
 This is a simplified replica of the site https://www.vinted.fr/, the project is still in progress.
 <br>
-You can visit the replica directly [here](https://gamepad-clone-bydenis.netlify.app/).
+You can visit the replica directly [here](https://vinted-clone-bydenis.netlify.app/).
 
 Developed functionalities :
 - Authentification SignIn & SignOut with cookies
 - Search bar of the game
-- Favorites
-- Filters
+- Access to the products pages
+
 
 Front-end : 
 ![](https://img.shields.io/badge/Code-React-informational?style=flat&logo=react&logoColor=white&color=EDAE49)
@@ -22,7 +22,10 @@ Database :
 
 ### Preview 
 
-![image](https://user-images.githubusercontent.com/85889219/152245357-25d7bea4-2958-4219-8749-7cb93f1807eb.png)
+<br>
+
+![image](https://user-images.githubusercontent.com/85889219/152249832-442bda26-12f4-48ab-87b1-701748d714e1.png)
+
 
 
 
