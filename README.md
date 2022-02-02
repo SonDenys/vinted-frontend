@@ -5,7 +5,6 @@ You can visit the replica directly [here](https://vinted-clone-bydenis.netlify.a
 
 Developed functionalities :
 - Authentification SignIn & SignOut with cookies
-- Search bar of the game
 - Access to the products pages
 
 
